@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --with python3 --buildsystem pybuild
+	
+override_dh_auto_build:
+	maturin build --release --strip
+
+override_dh_install:
+	mkdir -p debian/python3-orjson
+	python3 -m installer --destdir="debian/python3-orjson" target/wheels/*.whl
+	dh_install
