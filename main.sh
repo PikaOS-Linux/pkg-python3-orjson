@@ -1,5 +1,5 @@
 # Clone Upstream
-git clone https://github.com/ijl/orjson -b 3.9.1
+git clone https://github.com/ijl/orjson -b 3.9.7
 cp -rvf ./debian ./orjson/
 cd ./orjson
 
